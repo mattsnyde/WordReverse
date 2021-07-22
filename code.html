@@ -55,17 +55,42 @@
                 <div class="col-lg-8">
                     <pre class="line-numbers"> <!--line-numbers will put an increasing number for each line there is.-->
                         <code class="language-javascript">
-                            function helloWorld(){  
-                                alert("hello world")
+                        function getString(){
+                            document.getElementById('alert').classList.add('invisible') 
+                            const userString = document.getElementById('userString').value
+                            let reversedString = reverseString(userString)
+                            displayString(reversedString)
+                        }
+
+                        function reverseString(userString){
+                            let reversedString = [];
+
+                            for(let i = userString.length - 1; i >= 0; i--){  
+                            reversedString += userString[i] 
                             }
+                            return reversedString
+                        }
+
+                        
+                        function displayString(reversedString){
+                            const displayString = document.getElementById('message')
+                            displayString.innerHTML = `${reversedString}`
+                            document.getElementById('alert').classList.remove('invisible')  
+                        }
                         </code>
                     </pre>
                 </div>
                 <!--second column is description of the code-->
                 <div class="col-lg-4">
-                    <p>The code is structured in one function</p>
-                    <h5>Hello World</h5>
-                    <p>helloWorld is a function that displays an alert with a message of "Hello World"</p>
+                    <!-- <p>The code is structured in one function</p> -->
+                    <h5 class="mt-2 pb-1 border-bottom border-light">getString()</h5>
+                    <p>The getString() function is responsible for retrieving the users input and passing it to other functions used as a parameter. I also added a class of 'invisible' to the alert div that way it toggles between invisible and visibile. Two other functions are called here, reverseString() and displayString(0 which are described below.</p>
+                    <br>
+                    <h5 class="pb-1 border-bottom border-light">reverseString()</h5>
+                    <p>The reverseString() class takes a parameter which is representing the users input. Inside of the functiuon I initialized an empty array and used a for loop to iterate through the users string, adding the characters of the string to the empty array in backwards order.</p>
+                    <br>
+                    <h5 class="pb-1 border-bottom border-light">displayString()</h5>
+                    <p>The displayString() class takes a parameter which is representing the users input. INside of the function I access the html element with a class of message and assign the innerHTML of the element to the reversed string. I also remove the invisible class that was added inside of the getString() function so the user can see the reversed string,</p>
                 </div>
             </div>
         </div>

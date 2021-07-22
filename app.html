@@ -47,7 +47,30 @@
     </nav>
     <!--Main-->
     <main class="flex-shrink-0">
-        <div class="container"></div>
+        <div class="container mt-4">
+            <div class="row row-cols-1 row-cols-lg-2">
+                <div class="col">
+                    <h1 class="display-4 fw-bold lh-1 mb-3">Word Reverse: A coding Project</h1>
+                    <h4 class="lead ">A javascript coding exercise using arrays that reads strings and displays them in reverse.</h4>
+                </div>
+                <div class="col">
+                    <h5 class="border-1 border-bottom border-warning mt-2">Enter a string to reverse</h5>
+                    <form class="row hx-3 gy-2">
+                        <div class="col">
+                            <input class="form-control bg-dark border-warning text-light" id ="userString" type="text" aria-label="User string" name="User String" placeholder="Enter string here">
+                        </div>
+                        <div class="col-12">
+                            <button type="button" id="btnSubmit" class="btn btn-warning btn-md">Reverse</button>
+                        </div>
+                        <div class=" text-light alert alert-dark mt-5  fade invisible show" id="alert" type="alert"><!--Styles an alert like div that is  currently not visible by default. It will fade in when appropraite.-->
+                            <h5 class="alert-heading">Your string has been reversed</h5>
+                            <hr>
+                            <p class="mb-0" id="message"></p>
+                        </div> 
+                    </form>
+                </div>
+            </div>
+        </div>
     </main>
     <!--Footer Section-->
     <footer class="footer mt-auto py-3">
@@ -76,5 +99,8 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
     <script src="js/site.js"></script>
+    <script>
+        document.getElementById('btnSubmit').addEventListener('click', function(){getString()})
+    </script>
 </body>
 </html>
